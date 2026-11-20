@@ -58,18 +58,19 @@ Priority: u=0, i
 
 Resulting SQL Query Executed on Backend:
 
-SQL
+```SQL
 SELECT * FROM products WHERE category = 'Gifts' OR 1=1--' AND released = 1
 
 ## Proof of Exploitation Screenshots
 1. Burp Repeater Payload & HTTP 200 OK Response (Content-Length: 11600):
-
+![Burp Repeater Request and Response](../screenshots/sqli-01-repeater.png)
 2. Application Storefront Displaying Hidden Products & Lab Completion Banner:
+![PortSwigger Lab Solved Confirmation](../screenshots/sqli-01-solved.png)
 
 ## 4. Impact
 An unauthenticated attacker can bypass business-logic filters to enumerate unpublished products, internal pricing, or sensitive records stored within the queried database table.
 
-## 5.Remediation
+## 5. Remediation
 Primary Fix (Parameterized Queries): Use prepared statements with bound parameters so the database engine treats user input strictly as literal data rather than executable SQL syntax:
 
 cursor.execute("SELECT * FROM products WHERE category = %s AND released = 1", (category,))
