@@ -21,17 +21,17 @@ Exploit a `UNION`-based SQL injection vulnerability in the product category filt
 
 ### Step-by-Step Enumeration
 1. **Find the Number of Columns (`ORDER BY`):**
-   - Tested `' ORDER BY 1--` and `' ORDER BY 2--` $\rightarrow$ both returned **HTTP 200 OK**[cite: 27].
+   - Tested `' ORDER BY 1--` and `' ORDER BY 2--` $\rightarrow$ both returned **HTTP 200 OK**.
    - Tested `' ORDER BY 3--` $\rightarrow$ returned **HTTP 500 Internal Server Error**.
    - **Result:** The original query returns **2 columns**[cite: 27].
 2. **Find Text-Compatible Columns (`DUAL`):**
-   - Because Oracle requires a `FROM` table in every `SELECT` statement, tested `' UNION SELECT 'a', 'a' from DUAL--`[cite: 28].
-   - The server returned **HTTP 200 OK**, confirming both columns accept string (text) data[cite: 28].
+   - Because Oracle requires a `FROM` table in every `SELECT` statement, tested `' UNION SELECT 'a', 'a' from DUAL--`.
+   - The server returned **HTTP 200 OK**, confirming both columns accept string (text) data.
 
 ---
 
 ## 3. Exploitation & Proof of Concept (PoC)
-Oracle stores its version banner inside a built-in view called `v$version` in a column named `banner`. Since our query needs 2 columns, we select `banner` in the first column and `NULL` in the second[cite: 29].
+Oracle stores its version banner inside a built-in view called `v$version` in a column named `banner`. Since our query needs 2 columns, we select `banner` in the first column and `NULL` in the second.
 
 ### Final Payload
 ```sql
@@ -61,7 +61,7 @@ Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
 ![PortSwigger Lab Solved Confirmation](../screenshots/sqli-03-solved.png)
 
 ## 4. Impact
-An attacker can fingerprint the exact database engine and patch level (Oracle 11g 11.2.0.2.0), making it easy to craft database-specific UNION payloads to dump sensitive tables like usernames and passwords[cite: 29].
+An attacker can fingerprint the exact database engine and patch level (Oracle 11g 11.2.0.2.0), making it easy to craft database-specific UNION payloads to dump sensitive tables like usernames and passwords.
 
 ## 5. Remediation
 Primary Fix (Parameterized Queries): Use prepared statements with bound parameters so user input in the category filter is treated strictly as text rather than executable SQL commands:
