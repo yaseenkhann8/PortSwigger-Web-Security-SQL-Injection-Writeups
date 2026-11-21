@@ -4,8 +4,8 @@ Structured technical write-ups, Burp Suite workflows, and remediation guidance f
 
 **Author:** [Yaseen Khan](https://www.linkedin.com/in/yaseenkhann8) | **Focus:** Web Application Penetration Testing & VAPT
 
+---
 
-```markdown
 ## SQL Injection (SQLi) Progress (`3 / 18`)
 
 | # | Lab Title | Difficulty | Technique / Payload | Write-Up |
