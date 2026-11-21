@@ -49,16 +49,16 @@ Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
 ```
 ## Proof of Exploitation Screenshots
 1. Confirming 2 Columns (ORDER BY 2--):
-  ![Column Enumeration](../screenshots/Screenshot%202026-11-21%20151456.png)
+ ![Column Enumeration](../screenshots/sqli-03-column.png)
 
-3. Confirming Text Data Types (UNION SELECT 'a', 'a' from DUAL--):
-   ![Data Type Enumeration](../screenshots/Screenshot%202026-11-21%20151425.png)
+2. Confirming Text Data Types (UNION SELECT 'a', 'a' from DUAL--):
+   ![Data Type Enumeration](../screenshots/sqli-03-datatypes.png)
 
-5. Extracting Oracle Version Banner (v$version):
-   ![Oracle Version Banner](../screenshots/Screenshot%202026-11-21%20151913.png)
+3. Extracting Oracle Version Banner (v$version):
+   ![Oracle Version Banner](../screenshots/sqli-03-version.png)
 
-7. Lab Completion Banner:
-   ![PortSwigger Lab Solved Confirmation](../screenshots/Screenshot%202026-11-21%20151932.png)
+4. Lab Completion Banner:
+![PortSwigger Lab Solved Confirmation](../screenshots/sqli-03-solved.png)
 
 ## 4. Impact
 An attacker can fingerprint the exact database engine and patch level (Oracle 11g 11.2.0.2.0), making it easy to craft database-specific UNION payloads to dump sensitive tables like usernames and passwords[cite: 29].
