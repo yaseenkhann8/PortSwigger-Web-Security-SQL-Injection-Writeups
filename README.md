@@ -4,8 +4,7 @@ Structured technical write-ups, Burp Suite workflows, and remediation guidance f
 
 **Author:** [Yaseen Khan](https://www.linkedin.com/in/yaseenkhann8) | **Focus:** Web Application Penetration Testing & VAPT
 
----
-## SQL Injection (SQLi) Progress (`4 / 18`)
+## SQL Injection (SQLi) Progress (`5 / 18`)
 
 | # | Lab Title | Difficulty | Technique / Payload | Write-Up |
 | :--- | :--- | :--- | :--- | :--- |
@@ -13,3 +12,4 @@ Structured technical write-ups, Burp Suite workflows, and remediation guidance f
 | 02 | SQL injection vulnerability allowing login bypass | Apprentice | `administrator'--` | [View Write-Up](SQL-Injection/02-sqli-login-bypass.md) |
 | 03 | SQL injection attack, querying the database type and version on Oracle | Practitioner | `' UNION SELECT banner, NULL from v$version--` | [View Write-Up](SQL-Injection/03-sqli-oracle-database-version.md) |
 | 04 | SQL injection attack, querying the database type and version on MySQL and Microsoft | Practitioner | `' UNION select @@version, NULL#` | [View Write-Up](SQL-Injection/04-sqli-mysql-microsoft-version.md) |
+| 05 | SQL injection attack, listing the database contents on non-Oracle databases | Practitioner | `' UNION SELECT username_qolwnm, password_kzgxme from users_ypbwpv--` | [View Write-Up](SQL-Injection/05-sqli-listing-database-contents-non-oracle.md) |
