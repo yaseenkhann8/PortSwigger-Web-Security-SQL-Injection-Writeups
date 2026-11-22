@@ -61,7 +61,7 @@ Logging in via /login using administrator:lldwolq4upyv9wlg4mek grants full admin
 
 Proof of Exploitation Screenshots
 1. Confirming 2 Columns (' order by 2--):
-   ![Column Enumeration](../screenshots/sqli-05-column.png)
+   !(../screenshots/sqli-05-column.png)
 
 2. Confirming Text Data Types (' UNION select 'a', 'a'--):
    ![Data Type Enumeration](../screenshots/sqli-05-datatypes.png)
