@@ -4,8 +4,8 @@ Structured technical write-ups, Burp Suite workflows, and remediation guidance f
 
 **Author:** [Yaseen Khan](https://www.linkedin.com/in/yaseenkhann8) | **Focus:** Web Application Penetration Testing & VAPT
 
----
-## SQL Injection (SQLi) Progress (`7 / 18`)
+
+## SQL Injection (SQLi) Progress (`8 / 18`)
 
 | # | Lab Title | Difficulty | Technique / Payload | Write-Up |
 | :--- | :--- | :--- | :--- | :--- |
@@ -16,3 +16,4 @@ Structured technical write-ups, Burp Suite workflows, and remediation guidance f
 | 05 | SQL injection attack, listing the database contents on non-Oracle databases | Practitioner | `' UNION SELECT username_qolwnm, password_kzgxme from users_ypbwpv--` | [View Write-Up](SQL-Injection/05-sqli-listing-database-contents-non-oracle.md) |
 | 06 | SQL injection attack, listing the database contents on Oracle | Practitioner | `' UNION select USERNAME_ELCFDQ, PASSWORD_TVHDLX from USERS_CDHBZF--` | [View Write-Up](SQL-Injection/06-sqli-listing-database-contents-oracle.md) |
 | 07 | SQL injection UNION attack, determining the number of columns returned by the query | Practitioner | `' UNION select NULL, NULL, NULL--` | [View Write-Up](SQL-Injection/07-sqli-union-determining-columns.md) |
+| 08 | SQL injection UNION attack, finding a column containing text | Practitioner | `' UNION select NULL, 'J5Yk2B', NULL--` | [View Write-Up](SQL-Injection/08-sqli-union-finding-column-with-text.md) |
