@@ -1,9 +1,8 @@
-# PortSwigger Web Security Academy — VAPT Write-Ups
+# PortSwigger Web Security Academy — SQL Injection (SQLi) Write-Ups
 
-Structured technical write-ups, Burp Suite workflows, and remediation guidance for PortSwigger Web Security Academy labs.
+Structured VAPT write-ups, Burp Suite workflows, exploitation proofs, and defensive remediation guides for all 18 PortSwigger Web Security Academy SQL Injection labs.
 
 **Author:** [Yaseen Khan](https://www.linkedin.com/in/yaseenkhann8) | **Focus:** Web Application Penetration Testing & VAPT
-
 
 ## SQL Injection (SQLi) Progress (`8 / 18`)
 
