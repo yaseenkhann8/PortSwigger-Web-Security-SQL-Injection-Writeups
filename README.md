@@ -5,7 +5,7 @@ Structured VAPT write-ups, Burp Suite workflows, exploitation proofs, and defens
 **Author:** [Yaseen Khan](https://www.linkedin.com/in/yaseenkhann8) | **Focus:** Web Application Penetration Testing & VAPT
 
 ---
-## SQL Injection (SQLi) Progress (`10 / 18`)
+## SQL Injection (SQLi) Progress (`11 / 18`)
 
 | # | Lab Title | Difficulty | Technique / Payload | Write-Up |
 | :--- | :--- | :--- | :--- | :--- |
@@ -19,3 +19,4 @@ Structured VAPT write-ups, Burp Suite workflows, exploitation proofs, and defens
 | 08 | SQL injection UNION attack, finding a column containing text | Practitioner | `' UNION select NULL, 'J5Yk2B', NULL--` | [View Write-Up](SQL-Injection/08-sqli-union-finding-column-with-text.md) |
 | 09 | SQL injection UNION attack, retrieving data from other tables | Practitioner | `' UNION select username, password from users--` | [View Write-Up](SQL-Injection/09-sqli-union-retrieving-data-other-tables.md) |
 | 10 | SQL injection UNION attack, retrieving multiple values in a single column | Practitioner | `' UNION select NULL, username \|\| password from users--` | [View Write-Up](SQL-Injection/10-sqli-union-retrieving-multiple-values-single-column.md) |
+| 11 | Blind SQL injection with conditional responses | Practitioner | `' AND (SELECT SUBSTRING(password,1,1) FROM users WHERE username='administrator')='7'--` | [View Write-Up](SQL-Injection/11-sqli-blind-conditional-responses.md) |
