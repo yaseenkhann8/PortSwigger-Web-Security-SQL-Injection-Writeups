@@ -56,7 +56,7 @@ Logging in via /login with these credentials granted administrative access and s
 ![Boolean SQLi Confirmation](../screenshots/sqli-11-boolean-test.png)
 
 **2. Confirming `users` Table Exists:**
-![Users Table Enumeration](../screenshots/sqli-11-users-table.png)
+![Users Table Enumeration](../screenshots/sqli-11-user-table.png)
 
 **3. Confirming `administrator` Account Exists:**
 ![Administrator User Enumeration](../screenshots/sqli-11-admin-user.png)
@@ -68,10 +68,10 @@ Logging in via /login with these credentials granted administrative access and s
 ![Password Length Intruder](../screenshots/sqli-11-length-intruder.png)
 
 **6. Custom Python Automation Script (`SUBSTRING` Enumeration):**
-![Python Automation Script](../screenshots/sqli-11-python-script.jpg)
+![Python Automation Script](../screenshots/sqli-11-python-script.png)
 
 **7. Terminal Output Extracting Full 20-Character Password:**
-![Python Script Output](../screenshots/sqli-11-python-output.jpg)
+![Python Script Output](../screenshots/sqli-11-python-output.png)
 
 **8. Administrative Login & Lab Completion Banner:**
 ![PortSwigger Lab Solved Confirmation](../screenshots/sqli-11-solved.png)
