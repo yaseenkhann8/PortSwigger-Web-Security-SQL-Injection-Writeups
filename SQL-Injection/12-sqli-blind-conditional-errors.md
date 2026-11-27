@@ -62,22 +62,22 @@ Password: 33o2x7jdaq8qj1do96be
 
 Logging in via /login with these credentials granted administrative access and solved the lab.
 
-Proof of Exploitation Screenshots
+## Proof of Exploitation Screenshots
 1. Confirming SQLi via Single Quote (HTTP 500):
 ![Single Quote Error](../screenshots/sqli-12-single-quote-500.png)
 2. Escaping Quote to Restore Valid Syntax (HTTP 200):
 ![Double Single Quote Recovery](../screenshots/sqli-12-double-quote-200.png)
 3. Confirming users Table Exists (WHERE rownum=1):
-![Users Table Enumeration](../screenshots/sqli-12-users-table.png)
+![Users Table Enumeration](../screenshots/sqli-12-user-table.png)
 4. Fingerprinting Oracle Database (FROM dual):
-![Oracle Dual Confirmation](../screenshots/sqli-12-oracle-dual.png)
+![Oracle Dual Confirmation](../screenshots/sqli-12-oracle-database.png)
 5. Confirming `administrator` User Exists (`HTTP 500` Triggered):**
 *(Note: In the screenshot below, `THAN` was initially typed instead of `THEN`—make sure to use `THEN` in your own payload so the `500` error comes from `1/0` rather than a syntax typo.)*
-![Administrator User Check](../screenshots/sqli-12-admin-check-500.png)
+![Administrator User Check](../screenshots/sqli-12-admin-check.png)
 6. Confirming Exact Length (20 Characters) in Burp Intruder:
-![Password Length Intruder](../screenshots/sqli-12-length-intruder.png)
+![Password Length Intruder](../screenshots/sqli-12-password-length-intruder.png)
 7. Custom Python Automation Script Output (33o2x7jdaq8qj1do96be):
-![Python Automation Output](../screenshots/sqli-12-python-output.jpg)
+![Python Automation Output](../screenshots/sqli-12-python-output.png)
 8. Administrative Login & Lab Completion Banner:
 ![PortSwigger Lab Solved Confirmation](../screenshots/sqli-12-solved.png)
 
